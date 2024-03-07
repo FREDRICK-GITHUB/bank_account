@@ -1,6 +1,15 @@
 # bank_account
 
 ## Instructions for running project locally
+
+Clone the micro_service banch
+
+``` git clone -b micro-service https://github.com/FREDRICK-GITHUB/bank_account.git```
+
+Open project directory
+
+``` cd bank_account ```
+
 ### Ensure you have the following in your development environment:
 Install python3
 
