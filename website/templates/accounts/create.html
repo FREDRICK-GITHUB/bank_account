@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Add New Book Record {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form method="POST">
+                <h3 class="text-center">Assign New Account to User</h3>
+
+                <div class="form-group">
+                    <label for="user_id">Select User:</label>
+                    <select id="user_id" name="user_id" class="form-control" required>
+                        {% for user_info in users_info %}
+                        <option value="{{ user_info.id }}">{{ user_info.id }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">Create Bank Account</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %} Account Records (Today){% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center">
+        <h3>Bank Transaction Details - Current Day</h3>
+    </div>
+
+    <ul class="list-group mt-4">
+        <li class="list-group-item"><strong>User ID:</strong> {{ account_details.user_id }}</li>
+        <li class="list-group-item"><strong>Current Date:</strong> {{ account_details.date }}</li>
+        <li class="list-group-item"><strong>Account ID:</strong> {{ account_details.account_id }}</li>
+        <li class="list-group-item"><strong>Amount in Account:</strong> {{ account_details.amount }}</li>
+        <li class="list-group-item"><strong>Deposits Today:</strong> {{ account_details.deposit_count }}</li>
+        <li class="list-group-item"><strong>Amount Deposited Today:</strong> {{ account_details.deposit_amount }}</li>
+        <li class="list-group-item"><strong>Withdrawals Today:</strong> {{ account_details.withdrawal_count }}</li>
+        <li class="list-group-item"><strong>Amount Withdrawn Today:</strong> {{ account_details.withdrawal_amount }}
+        </li>
+    </ul>
+    <br /><br /><br />
+    <form method="POST" action="/create_transaction">
+        <div class="form-group" style="display: none;">
+            <input type="number" class="form-control" id="user_id" name="user_id"
+                value="{{ account_details.user_id }}" />
+        </div>
+
+        <div class="form-group" style="display: none;">
+            <input type="number" class="form-control" id="account_id" name="account_id"
+                value="{{ account_details.account_id }}" />
+        </div>
+
+        <div class="form-group">
+            <label for="transaction_type">Select Transaction Type:</label>
+            <select id="transaction_type" name="transaction_type" class="form-control" required>
+
+                <option value="deposit"> Deposit </option>
+                <option value="withdraw"> Withdraw </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="number" class="form-control" id="amount" name="amount" />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block"> Complete Transaction </button>
+    </form>
+
+
+</div>
+{% endblock %}

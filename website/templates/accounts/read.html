@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %} View All Library Users {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center">
+        <h3>Member Records</h3>
+    </div>
+
+    <h2>List of Members</h2>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>User ID</th>
+                <th>Account ID</th>
+                <th>Amount</th>
+                <th>Created</th>
+                <th>Last Updated</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for account_detail in account_details %}
+            <tr>
+                <td>{{ account_detail.user_id }}</td>    
+                <td>{{ account_detail.account_id }}</td>
+                <td>{{ account_detail.amount }}</td>
+                <td>{{ account_detail.created }}</td>
+                <td>{{ account_detail.updated }}</td>
+                <td><a href="/create_transaction/{{ account_detail.user_id }}"><button>Transact</button></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
