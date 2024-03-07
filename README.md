@@ -53,24 +53,24 @@ You will get a url which will help you access the platform on a browser
 ![login page](image.png)
 
 # Create new user
-![alt text](image-1.png)
+![create user](image-1.png)
 
 # Create Bank Account
-![alt text](image-2.png)
+![create bank account](image-2.png)
 
 # View Bank Account and Transact
-![alt text](image-3.png)
+![transact](image-3.png)
 
 # Create Transaction - Deposit
-![alt text](image-4.png)
+![deposit](image-4.png)
 
 # View Transaction
-![alt text](image-5.png)
+![view transaction](image-5.png)
 
 # View User Account Balance
-![alt text](image-6.png)
+![view balance](image-6.png)
 
 # Create Transaction - Withdrawal( Exeeding amount in account)
-![alt text](image-7.png)
+![withdraw](image-7.png)
 
-![alt text](image-8.png)
+![withdraw respose](image-8.png)
