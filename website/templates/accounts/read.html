@@ -12,10 +12,7 @@
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
+                <th>User ID</th>
                 <th>Account ID</th>
                 <th>Amount</th>
                 <th>Created</th>
@@ -27,9 +24,6 @@
             {% for account_detail in account_details %}
             <tr>
                 <td>{{ account_detail.user_id }}</td>    
-                <td>{{ account_detail.first_name }}</td>
-                <td>{{ account_detail.last_name }}</td>
-                <td>{{ account_detail.email }}</td>
                 <td>{{ account_detail.account_id }}</td>
                 <td>{{ account_detail.amount }}</td>
                 <td>{{ account_detail.created }}</td>

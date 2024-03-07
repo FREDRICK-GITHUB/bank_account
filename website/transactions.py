@@ -44,9 +44,6 @@ def create_transaction(user_id):
 
     account_details = {
         "user_id": user_id,
-        "first_name": user.first_name,
-        "last_name": user.last_name,
-        "email": user.email,
         "account_id": account.id,
         "amount": account.amount,
         "withdrawal_count": len(today_withdrawals),
@@ -271,24 +268,16 @@ def view_transactions():
         Transaction,
         Account.id.label('account_id'),
         Account.amount.label('account_amount'),
-        User.first_name,
-        User.last_name,
-        User.email
     ).join(
         Account, Transaction.account_id == Account.id
-    ).join(
-        User, Account.user_id == User.id
     ).all()
 
     results = []
-    for transaction, account_id, account_amount, first_name, last_name, email in transactions_details:
+    for transaction, account_id, account_amount in transactions_details:
         result = {
             'transaction_id': transaction.id,
             'account_id': account_id,
             'account_amount': account_amount,
-            'first_name': first_name,
-            'last_name': last_name,
-            'email': email,
             'transaction_type': transaction.transaction_type,
             'transaction_amount': transaction.amount,
             'transaction_created': transaction.created

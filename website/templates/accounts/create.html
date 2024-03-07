@@ -12,7 +12,7 @@
                     <label for="user_id">Select User:</label>
                     <select id="user_id" name="user_id" class="form-control" required>
                         {% for user_info in users_info %}
-                        <option value="{{ user_info.id }}">{{ user_info.first_name }} {{ user_info.last_name }} [{{ user_info.email }}]</option>
+                        <option value="{{ user_info.id }}">{{ user_info.id }}</option>
                         {% endfor %}
                     </select>
                 </div>
